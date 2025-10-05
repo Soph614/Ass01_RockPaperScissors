@@ -1,8 +1,10 @@
 import javax.swing.*;
 import java.util.Scanner;
 
-public class Ass01_RockPaperScissors {
-    public static void main(String[] args) {
+public class Ass01_RockPaperScissors
+{
+    public static void main(String[] args)
+    {
         Scanner in = new Scanner(System.in);
         String playOrNot = "Y";
         String playerA = "";
@@ -36,17 +38,33 @@ public class Ass01_RockPaperScissors {
             }
             else if(playerA.equalsIgnoreCase("P"))
             {
-                System.out.println("Processing...");
+                if(playerB.equalsIgnoreCase("R")) ;
+                {
+                    System.out.println("Paper covers Rock, Player A wins!");
+                }
+                else if(playerB.equalsIgnoreCase("P")) {
+                    System.out.println("You both chose Paper, it's a tie!");
+                } else
+                    System.out.println("Scissors cut Paper, Player B wins!");
             }
             else
+                if(playerB.equalsIgnoreCase("R"))
+                {
+                    System.out.println("Rock breaks Scissors, Player B wins!");
+                }
+                else if(playerB.equalsIgnoreCase("P"))
+                {
+                    System.out.println("Scissors cut Paper, Player A wins!");
+                }
+                else
+                    System.out.println("You both chose Scissors, it's a tie!");
+
             {
                 System.out.println("I really want this to work.");
             }
 
             } while(playerA.equalsIgnoreCase("R, P, S"));
 
-            in.nextLine();
-            playOrNot = "Y";
             System.out.println("Press Y to keep playing or any other key to stop playing: ");
             playOrNot = in.nextLine();
         } while(playOrNot.equalsIgnoreCase("Y"));
