@@ -7,18 +7,22 @@ public class Ass01_RockPaperScissors {
         String playerA = ""; // names playerA
         String playerB = ""; // names playerB
 
+        System.out.println("Player A, please enter your choice, R, P, or S: ");
+        playerA = in.nextLine();
+
         do {
             do {
-                System.out.println("Player A, please enter your choice, R, P, or S: ");
+                System.out.println("That is an incorrect value. Please choose R, P, or S: ");
                 playerA = in.nextLine();
-                in.nextLine();
-            } while (playerA.equalsIgnoreCase("R") || playerA.equalsIgnoreCase("P") || playerA.equalsIgnoreCase("S"));
+            } while(playerA != "R" | playerA != "P" | playerA != "S");
+
+            System.out.println("Player B, please enter your choice, R, P, or S: ");
+            playerB = in.nextLine();
 
             do {
-                System.out.println("Player B, please enter your choice: R, P, or S: ");
+                System.out.println("That is an incorrect value. Please choose R, P, or S: ");
                 playerB = in.nextLine();
-                in.nextLine();
-            } while (playerB.equalsIgnoreCase("R") || playerB.equalsIgnoreCase("P") || playerB.equalsIgnoreCase("S"));
+            } while(playerB != "R" | playerB != "P" | playerB != "S");
 
             if(playerA.equalsIgnoreCase("R"))
             {
@@ -35,9 +39,10 @@ public class Ass01_RockPaperScissors {
             }
             else if(playerA.equalsIgnoreCase("P"))
             {
-                if(playerB.equalsIgnoreCase("R")) ;
+                if(playerB.equalsIgnoreCase("R"))
                 {
                     System.out.println("Paper covers Rock, Player A wins!");
+
                 }
                 else if(playerB.equalsIgnoreCase("P"))
                 {
@@ -47,19 +52,24 @@ public class Ass01_RockPaperScissors {
                     System.out.println("Scissors cut Paper, Player B wins!");
             }
             else
-                if(playerB.equalsIgnoreCase("R"))
+            {
+                if (playerB.equalsIgnoreCase("R"))
                 {
-                 System.out.println("Rock breaks Scissors, Player B wins!");
+                    System.out.println("Rock breaks Scissors, Player B wins!");
                 }
-                else if(playerB.equalsIgnoreCase("P"))
+                else if (playerB.equalsIgnoreCase("P"))
                 {
                     System.out.println("Scissors cut Paper, Player A wins!");
                 }
                 else
+                {
                     System.out.println("You both chose Scissors, it's a tie!");
+                }
+            }
 
             System.out.println("Press Y to keep playing or any other key to stop playing: ");
             playOrNot = in.nextLine();
+
         } while (playOrNot.equalsIgnoreCase("Y"));
     }
 }
