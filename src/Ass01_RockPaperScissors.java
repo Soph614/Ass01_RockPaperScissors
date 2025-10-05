@@ -13,13 +13,13 @@ public class Ass01_RockPaperScissors {
                 System.out.println("Player A, please enter your choice, R, P, or S: ");
                 playerA = in.nextLine();
                 in.nextLine();
-            } while(playerA.equalsIgnoreCase("R, P, S"));
+            } while(playerA.equalsIgnoreCase("R") || playerA.equalsIgnoreCase("P") || playerA.equalsIgnoreCase("S"));
 
             do {
                 System.out.println("Player B, please enter your choice: R, P, or S: ");
                 playerB = in.nextLine();
                 in.nextLine();
-            } while(playerB.equalsIgnoreCase("R, P, S"));
+            } while(playerB.equalsIgnoreCase("R") || playerB.equalsIgnoreCase("P") || playerB.equalsIgnoreCase("S"));
 
             if(playerA.equalsIgnoreCase("R"))
             {
@@ -36,7 +36,7 @@ public class Ass01_RockPaperScissors {
             }
             else if(playerA.equalsIgnoreCase("P"))
             {
-                System.out.println("processing...");
+                System.out.println("Processing...");
             }
             else
             {
