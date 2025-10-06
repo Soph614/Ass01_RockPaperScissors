@@ -4,22 +4,39 @@ public class Ass01_RockPaperScissors {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in); // names Scanner "in"
         String playOrNot = "Y"; // makes playOrNot equal to Y so that the while loop runs the first time
+        String playerA = "";
+        String playerB = "";
+        boolean done = false;
 
-        System.out.println("Player A, please enter your choice, R, P, or S: ");
-        String playerA = in.nextLine();
         do {
             do {
-                System.out.println("That is an incorrect value. Please choose R, P, or S: ");
-                playerA = in.nextLine();
-            } while(playerA != "R" | playerA != "P" | playerA != "S");
+                System.out.print("Player A, please enter your choice, R, P, or S: "); // collecting Player A's choice
+                playerA = in.nextLine(); // storing choice in value playerA
+                if(playerA.equalsIgnoreCase("R") | playerA.equalsIgnoreCase("P") | playerA.equalsIgnoreCase("S"))
+                {
+                    done = true;
+                }
+                else {
+                    System.out.println("That is an incorrect value.");
+                }
+                // System.out.println("That is an incorrect value.");
+            } while(!done);
 
-            in.nextLine();
-            System.out.println("Player B, please enter your choice, R, P, or S: ");
-            String playerB = in.nextLine();
+            done = false;
+
             do {
-                System.out.println("That is an incorrect value. Please choose R, P, or S: ");
+                System.out.println("Player B, please enter your choice, R, P, or S: ");
                 playerB = in.nextLine();
-            } while(playerB != "R" | playerB != "P" | playerB != "S");
+                if(playerB.equalsIgnoreCase("R") | playerB.equalsIgnoreCase("P") | playerB.equalsIgnoreCase("S"))
+                {
+                    done = true;
+                }
+                else {
+                    System.out.println("That is an incorrect value.");
+                }
+            } while(!done);
+
+            done = false;
 
             if(playerA.equalsIgnoreCase("R"))
             {
@@ -64,9 +81,9 @@ public class Ass01_RockPaperScissors {
                 }
             }
 
-            System.out.println("Press Y to keep playing or any other key to stop playing: ");
+            System.out.println("Press any key to keep playing, or Q to quit: ");
             playOrNot = in.nextLine();
 
-        } while(playOrNot.equalsIgnoreCase("Y"));
+        } while(!playOrNot.equalsIgnoreCase("Q"));
     }
 }
