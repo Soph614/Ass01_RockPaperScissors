@@ -17,7 +17,7 @@ public class Ass01_RockPaperScissors {
                     done = true;
                 }
                 else {
-                    System.out.println("That is an incorrect value.");
+                    System.out.print("That is an incorrect value. ");
                 }
                 // System.out.println("That is an incorrect value.");
             } while(!done);
@@ -25,14 +25,14 @@ public class Ass01_RockPaperScissors {
             done = false;
 
             do {
-                System.out.println("Player B, please enter your choice, R, P, or S: ");
+                System.out.print("Player B, please enter your choice, R, P, or S: ");
                 playerB = in.nextLine();
                 if(playerB.equalsIgnoreCase("R") | playerB.equalsIgnoreCase("P") | playerB.equalsIgnoreCase("S"))
                 {
                     done = true;
                 }
                 else {
-                    System.out.println("That is an incorrect value.");
+                    System.out.print("That is an incorrect value. ");
                 }
             } while(!done);
 
@@ -81,9 +81,21 @@ public class Ass01_RockPaperScissors {
                 }
             }
 
-            System.out.println("Press any key to keep playing, or Q to quit: ");
-            playOrNot = in.nextLine();
+            done = false;
 
-        } while(!playOrNot.equalsIgnoreCase("Q"));
+            do {
+                System.out.print("Play again? (Y for yes, N for no): ");
+                playOrNot = in.nextLine();
+                if(playOrNot.equalsIgnoreCase("Y") | playOrNot.equalsIgnoreCase("N"))
+                {
+                    done = true;
+                }
+                else
+                {
+                    System.out.print("That is an incorrect value. ");
+                }
+            } while(!done);
+
+        } while(playOrNot.equalsIgnoreCase("Y"));
     }
 }
