@@ -4,21 +4,18 @@ public class Ass01_RockPaperScissors {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in); // names Scanner "in"
         String playOrNot = "Y"; // makes playOrNot equal to Y so that the while loop runs the first time
-        String playerA = ""; // names playerA
-        String playerB = ""; // names playerB
 
         System.out.println("Player A, please enter your choice, R, P, or S: ");
-        playerA = in.nextLine();
-
+        String playerA = in.nextLine();
         do {
             do {
                 System.out.println("That is an incorrect value. Please choose R, P, or S: ");
                 playerA = in.nextLine();
             } while(playerA != "R" | playerA != "P" | playerA != "S");
 
+            in.nextLine();
             System.out.println("Player B, please enter your choice, R, P, or S: ");
-            playerB = in.nextLine();
-
+            String playerB = in.nextLine();
             do {
                 System.out.println("That is an incorrect value. Please choose R, P, or S: ");
                 playerB = in.nextLine();
@@ -70,6 +67,6 @@ public class Ass01_RockPaperScissors {
             System.out.println("Press Y to keep playing or any other key to stop playing: ");
             playOrNot = in.nextLine();
 
-        } while (playOrNot.equalsIgnoreCase("Y"));
+        } while(playOrNot.equalsIgnoreCase("Y"));
     }
 }
